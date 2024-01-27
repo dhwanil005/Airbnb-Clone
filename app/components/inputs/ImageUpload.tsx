@@ -62,10 +62,10 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                                 h-full
                                 ">
                                     <Image
-                                    alt="Uploaded Image"
                                     fill
                                     style={{objectFit: "cover"}}
                                     src={value}
+                                    alt="Uploaded Image"
                                     />
                                 </div>
                             )}
