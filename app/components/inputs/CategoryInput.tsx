@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
 import { IconType } from "react-icons";
 
 interface CategoryInputProps {
-    icon: IconType;
-    label: string;
-    selected?: boolean;
-    onClick: (value: string) => void;
+  icon: IconType;
+  label: string;
+  selected?: boolean;
+  onClick: (value: string) => void;
 }
 
 const CategoryInput: React.FC<CategoryInputProps> = ({
-    icon: Icon,
-    label,
-    selected,
-    onClick
+  icon: Icon,
+  label,
+  selected,
+  onClick,
 }) => {
-    return (
-        <div
-            onClick={() => onClick(label)}
-            className={`
+  return (
+    <div
+      onClick={() => onClick(label)}
+      className={`
                 rounded-xl
                 border-2
                 p-4
@@ -28,15 +28,14 @@ const CategoryInput: React.FC<CategoryInputProps> = ({
                 hover:border-black
                 transition
                 cursor-pointer
-                ${selected ? 'border-black' : 'border-neutral-200'}
-                ${selected ? 'text-neutral-800' : 'text-neutral-500'}
-            `}>
-            <Icon size={26} />
-            <div className="font-medium text-sm">
-                {label}
-            </div>
-        </div>
-    )
-}
+                ${selected ? "border-black" : "border-neutral-200"}
+                ${selected ? "text-neutral-800" : "text-neutral-500"}
+            `}
+    >
+      <Icon size={26} />
+      <div className="font-medium text-sm">{label}</div>
+    </div>
+  );
+};
 
 export default CategoryInput;

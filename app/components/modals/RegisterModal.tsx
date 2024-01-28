@@ -41,7 +41,7 @@ const RegisterModal = () => {
         registerModal.onClose();
       })
       .catch((error) => {
-        toast.error('Something Went Wrong');
+        toast.error("Something Went Wrong");
       })
       .finally(() => {
         setIsLoading(false);
@@ -50,7 +50,7 @@ const RegisterModal = () => {
   const toggle = useCallback(() => {
     registerModal.onClose();
     loginModal.onOpen();
-  },[loginModal, registerModal]);
+  }, [loginModal, registerModal]);
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading title="Welcome to Airbnb" subtitle="Create an Account!" />
@@ -85,42 +85,42 @@ const RegisterModal = () => {
   const footerContent = (
     <div className=" flex flex-col gap-4 mt-3">
       <hr />
-      <Button 
+      <Button
         outline
-        label = "Continue With Google"
-        icon = {FcGoogle}
-        onClick = {()=> signIn("google")}
+        label="Continue With Google"
+        icon={FcGoogle}
+        onClick={() => signIn("google")}
       />
-      <Button 
+      <Button
         outline
-        label = "Continue With Github"
-        icon = {AiFillGithub}
-        onClick = {()=> signIn("github")}
+        label="Continue With Github"
+        icon={AiFillGithub}
+        onClick={() => signIn("github")}
       />
-      <div className="
+      <div
+        className="
       text-neutral-500
       text-center
       mt-4
       font-light
-      ">
+      "
+      >
         <div className="justify-center flex flex-row items-center gap-2">
-          <div>
-            Already have an Account?
-          </div>
-          <div 
-            onClick = {toggle}
+          <div>Already have an Account?</div>
+          <div
+            onClick={toggle}
             className="
             text-neutral-800
             cursor-pointer
             hover:underline
-            ">
-            Log In  
-          </div>          
+            "
+          >
+            Log In
+          </div>
         </div>
       </div>
     </div>
-    
-    )
+  );
   return (
     <Modal
       disabled={isLoading}

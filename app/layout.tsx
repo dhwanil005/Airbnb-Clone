@@ -33,16 +33,13 @@ export default async function RootLayout({
       <body className={inter.className}>
         <ClientOnly>
           <ToasterProvider />
-          <SearchModal/>
+          <SearchModal />
           <RentModal />
           <LoginModal />
           <RegisterModal />
-          <Navbar currentUser={currentUser}/>
+          <Navbar currentUser={currentUser} />
         </ClientOnly>
-        <div className="pb-20 pt-28">
-          {children}
-        </div>
-
+        <div className="pb-20 pt-28">{children}</div>
       </body>
     </html>
   );

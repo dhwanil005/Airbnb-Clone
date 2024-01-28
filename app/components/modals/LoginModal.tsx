@@ -37,25 +37,23 @@ const LoginModal = () => {
     signIn("credentials", {
       ...data,
       redirect: false,
-    })
-    .then((callback) => {
+    }).then((callback) => {
       setIsLoading(false);
-        
+
       if (callback?.ok) {
-        toast.success('Logged In');
+        toast.success("Logged In");
         router.refresh();
         loginModal.onClose();
       }
       if (callback?.error) {
         toast.error(callback.error);
       }
-    
-    })
+    });
   };
   const toggle = useCallback(() => {
     loginModal.onClose();
     registerModal.onOpen();
-  },[loginModal, registerModal]);
+  }, [loginModal, registerModal]);
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -83,42 +81,42 @@ const LoginModal = () => {
   const footerContent = (
     <div className=" flex flex-col gap-4 mt-3">
       <hr />
-      <Button 
+      <Button
         outline
-        label = "Continue With Google"
-        icon = {FcGoogle}
-        onClick = {()=> signIn("google")}
+        label="Continue With Google"
+        icon={FcGoogle}
+        onClick={() => signIn("google")}
       />
-      <Button 
+      <Button
         outline
-        label = "Continue With Github"
-        icon = {AiFillGithub}
-        onClick = {()=> signIn("github")}
+        label="Continue With Github"
+        icon={AiFillGithub}
+        onClick={() => signIn("github")}
       />
-      <div className="
+      <div
+        className="
       text-neutral-500
       text-center
       mt-4
       font-light
-      ">
+      "
+      >
         <div className="justify-center flex flex-row items-center gap-2">
-          <div>
-            First time using Airbnb?
-          </div>
-          <div 
-            onClick = {toggle}
+          <div>First time using Airbnb?</div>
+          <div
+            onClick={toggle}
             className="
             text-neutral-800
             cursor-pointer
             hover:underline
-            ">
-            Create an Account 
-          </div>          
+            "
+          >
+            Create an Account
+          </div>
         </div>
       </div>
     </div>
-    
-    )
+  );
   return (
     <Modal
       disabled={isLoading}
