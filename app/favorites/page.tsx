@@ -12,7 +12,7 @@ const ListingPage = async  () =>{
     if(listings.length===0){
         return(
             <ClientOnly>
-                <Heading
+                <EmptyState
                 title ="No favorites found"
                 subtitle="Looks like you have no favorite listings"
                 />
